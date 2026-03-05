@@ -5,8 +5,6 @@ type SocialLinksProps = {
   links: SocialLink[];
 };
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
 export function SocialLinks({ links }: SocialLinksProps) {
   return (
     <ul className="social-list js-enter">
@@ -29,7 +27,7 @@ export function SocialLinks({ links }: SocialLinksProps) {
               <span className="social-bubble" aria-hidden>
                 <Image
                   className={`social-icon social-icon--${link.id}`}
-                  src={`${basePath}${link.iconPath}`}
+                  src={link.iconPath}
                   alt=""
                   width={52}
                   height={52}
